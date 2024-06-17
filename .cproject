@@ -46,9 +46,8 @@
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/Module/Inc}"/>
-									<listOptionValue builtIn="false" value="D:\workspace\DSP\6. REDEYE-CAS\workspace\REDEYE-CAS-Slave\Module\Inc"/>
-									<listOptionValue builtIn="false" value="C:\ti\c2000\C2000Ware_5_01_00_00\device_support\f2833x\common\include"/>
 									<listOptionValue builtIn="false" value="C:\ti\c2000\C2000Ware_5_01_00_00\device_support\f2833x\headers\include"/>
+									<listOptionValue builtIn="false" value="C:\ti\c2000\C2000Ware_5_01_00_00\device_support\f2833x\common\include"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.ABI.2064076359" name="Application binary interface [See 'General' page to edit] (--abi)" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.ABI" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.ABI.coffabi" valueType="enumerated"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compiler.inputType__C_SRCS.1755263543" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compiler.inputType__C_SRCS"/>
@@ -167,4 +166,6 @@
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="null.devicePreference"/>
+	<storageModule moduleId="cpuFamily"/>
 </cproject>

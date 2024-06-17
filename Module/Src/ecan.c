@@ -97,8 +97,6 @@ static interrupt void ECAN_RxIsr(void)
     gMbox1Buff[6] = ECanaMboxes.MBOX1.MDH.byte.BYTE6;
     gMbox1Buff[7] = ECanaMboxes.MBOX1.MDH.byte.BYTE7;
 
-    SCIA_Print("RxIsr\r\n");
-
     ECanaShadow.CANRMP.all = 0;
     ECanaShadow.CANRMP.bit.RMP1 =1;  /* Received Message Pending */
     ECanaRegs.CANRMP.all = ECanaShadow.CANRMP.all;

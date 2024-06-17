@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Fri Jun 14 17:24:29 2024
+>> Linked Mon Jun 17 11:39:39 2024
 
 OUTPUT FILE NAME:   <REDEYE-CAS-Slave.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00339a71
+ENTRY POINT SYMBOL: "_c_int00"  address: 00339a91
 
 
 MEMORY CONFIGURATION
@@ -25,7 +25,7 @@ PAGE 0:
   FLASHE                00318000   00008000  00000000  00008000  RWIX
   FLASHD                00320000   00008000  00000004  00007ffc  RWIX
   FLASHC                00328000   00008000  00000000  00008000  RWIX
-  FLASHA                00338000   00007f80  00002159  00005e27  RWIX
+  FLASHA                00338000   00007f80  0000215d  00005e23  RWIX
   CSM_RSVD              0033ff80   00000076  00000000  00000076  RWIX
   BEGIN                 0033fff6   00000002  00000002  00000000  RWIX
   CSM_PWL               0033fff8   00000008  00000000  00000008  RWIX
@@ -105,16 +105,16 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.cinit     0    0033a12c    0000002e     
-                  0033a12c    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
-                  0033a13a    00000005                       : _lock.c.obj (.cinit:__lock)
-                  0033a13f    00000005                       : _lock.c.obj (.cinit:__unlock)
-                  0033a144    00000004     ecan.obj (.cinit:_gMbox0Buff)
-                  0033a148    00000004     ecan.obj (.cinit:_gMbox1Buff)
-                  0033a14c    00000004     ecan.obj (.cinit)
-                  0033a150    00000004     rts2800_fpu32.lib : errno.c.obj (.cinit)
-                  0033a154    00000004     sci.obj (.cinit)
-                  0033a158    00000002     --HOLE-- [fill = 0]
+.cinit     0    0033a130    0000002e     
+                  0033a130    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
+                  0033a13e    00000005                       : _lock.c.obj (.cinit:__lock)
+                  0033a143    00000005                       : _lock.c.obj (.cinit:__unlock)
+                  0033a148    00000004     ecan.obj (.cinit:_gMbox0Buff)
+                  0033a14c    00000004     ecan.obj (.cinit:_gMbox1Buff)
+                  0033a150    00000004     ecan.obj (.cinit)
+                  0033a154    00000004     rts2800_fpu32.lib : errno.c.obj (.cinit)
+                  0033a158    00000004     sci.obj (.cinit)
+                  0033a15c    00000002     --HOLE-- [fill = 0]
 
 .pinit     0    00338000    00000000     UNINITIALIZED
 
@@ -122,7 +122,7 @@ section   page    origin      length       input sections
 *          0    00320000    00000004     RUN ADDR = 00008000
                   00320000    00000004     DSP2833x_usDelay.obj (.TI.ramfunc)
 
-.text      0    00338000    00001e65     
+.text      0    00338000    00001e85     
                   00338000    000006d0     rts2800_fpu32.lib : _printfi.c.obj (.text)
                   003386d0    000005f5                       : _printfi.c.obj (.text:__TI_printfi)
                   00338cc5    00000316     DSP2833x_DefaultIsr.obj (.text:retain)
@@ -132,49 +132,49 @@ section   page    origin      length       input sections
                   003393a7    0000010e     sci.obj (.text)
                   003394b5    00000107     rts2800_fpu32.lib : ll_div28.asm.obj (.text)
                   003395bc    000000f7     DSP2833x_SysCtrl.obj (.text)
-                  003396b3    000000a9     rts2800_fpu32.lib : s_scalbn.c.obj (.text)
-                  0033975c    0000009c                       : fd_add28.asm.obj (.text)
-                  003397f8    00000095     main.obj (.text)
-                  0033988d    0000008b     rts2800_fpu32.lib : fd_div28.asm.obj (.text)
-                  00339918    00000083                       : fd_mpy28.asm.obj (.text)
-                  0033999b    0000007c     ecan.obj (.text:retain)
-                  00339a17    0000005a     rts2800_fpu32.lib : s_frexp.c.obj (.text)
-                  00339a71    00000056                       : boot28.asm.obj (.text)
-                  00339ac7    00000048     DSP2833x_Sci.obj (.text)
-                  00339b0f    00000031     rts2800_fpu32.lib : atoi.c.obj (.text)
-                  00339b40    00000030     sci.obj (.text:retain)
-                  00339b70    00000030     rts2800_fpu32.lib : _ltoa.c.obj (.text)
-                  00339ba0    00000030                       : vsprintf.c.obj (.text)
-                  00339bd0    0000002a                       : fd_cmp28.asm.obj (.text)
-                  00339bfa    0000002a                       : l_div28.asm.obj (.text)
-                  00339c24    00000029                       : exit.c.obj (.text)
-                  00339c4d    00000028     DSP2833x_PieCtrl.obj (.text)
-                  00339c75    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
-                  00339c99    00000024                       : s_copysign.c.obj (.text)
-                  00339cbd    00000021                       : fd_toi28.asm.obj (.text)
-                  00339cde    00000020     DSP2833x_PieVect.obj (.text)
-                  00339cfe    0000001f     rts2800_fpu32.lib : fd_tol28.asm.obj (.text)
-                  00339d1d    0000001e                       : ll_cmp28.asm.obj (.text)
-                  00339d3b    0000001d                       : i_tofd28.asm.obj (.text)
-                  00339d58    0000001d                       : memcpy.c.obj (.text)
-                  00339d75    0000001c                       : fs_tofdfpu32.asm.obj (.text)
-                  00339d91    0000001c                       : l_tofd28.asm.obj (.text)
-                  00339dad    00000018                       : ll_aox28.asm.obj (.text)
-                  00339dc5    00000017     DSP2833x_Gpio.obj (.text)
-                  00339ddc    00000013     DSP2833x_MemCopy.obj (.text)
-                  00339def    00000012     rts2800_fpu32.lib : args_main.c.obj (.text)
-                  00339e01    00000010                       : memccpy.c.obj (.text)
-                  00339e11    0000000e                       : fd_sub28.asm.obj (.text)
-                  00339e1f    0000000c                       : strchr.c.obj (.text)
-                  00339e2b    00000009                       : _lock.c.obj (.text)
-                  00339e34    00000009                       : fd_neg28.asm.obj (.text)
-                  00339e3d    00000009                       : wcslen.c.obj (.text)
-                  00339e46    00000008     DSP2833x_CodeStartBranch.obj (.text)
-                  00339e4e    00000008     rts2800_fpu32.lib : strlen.c.obj (.text)
-                  00339e56    00000007                       : memset.c.obj (.text)
-                  00339e5d    00000005                       : strcpy.c.obj (.text)
-                  00339e62    00000002                       : pre_init.c.obj (.text)
-                  00339e64    00000001                       : startup.c.obj (.text)
+                  003396b3    000000da     main.obj (.text)
+                  0033978d    000000a9     rts2800_fpu32.lib : s_scalbn.c.obj (.text)
+                  00339836    0000009c                       : fd_add28.asm.obj (.text)
+                  003398d2    0000008b                       : fd_div28.asm.obj (.text)
+                  0033995d    00000083                       : fd_mpy28.asm.obj (.text)
+                  003399e0    0000005a                       : s_frexp.c.obj (.text)
+                  00339a3a    00000057     ecan.obj (.text:retain)
+                  00339a91    00000056     rts2800_fpu32.lib : boot28.asm.obj (.text)
+                  00339ae7    00000048     DSP2833x_Sci.obj (.text)
+                  00339b2f    00000031     rts2800_fpu32.lib : atoi.c.obj (.text)
+                  00339b60    00000030     sci.obj (.text:retain)
+                  00339b90    00000030     rts2800_fpu32.lib : _ltoa.c.obj (.text)
+                  00339bc0    00000030                       : vsprintf.c.obj (.text)
+                  00339bf0    0000002a                       : fd_cmp28.asm.obj (.text)
+                  00339c1a    0000002a                       : l_div28.asm.obj (.text)
+                  00339c44    00000029                       : exit.c.obj (.text)
+                  00339c6d    00000028     DSP2833x_PieCtrl.obj (.text)
+                  00339c95    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
+                  00339cb9    00000024                       : s_copysign.c.obj (.text)
+                  00339cdd    00000021                       : fd_toi28.asm.obj (.text)
+                  00339cfe    00000020     DSP2833x_PieVect.obj (.text)
+                  00339d1e    0000001f     rts2800_fpu32.lib : fd_tol28.asm.obj (.text)
+                  00339d3d    0000001e                       : ll_cmp28.asm.obj (.text)
+                  00339d5b    0000001d                       : i_tofd28.asm.obj (.text)
+                  00339d78    0000001d                       : memcpy.c.obj (.text)
+                  00339d95    0000001c                       : fs_tofdfpu32.asm.obj (.text)
+                  00339db1    0000001c                       : l_tofd28.asm.obj (.text)
+                  00339dcd    00000018                       : ll_aox28.asm.obj (.text)
+                  00339de5    00000017     DSP2833x_Gpio.obj (.text)
+                  00339dfc    00000013     DSP2833x_MemCopy.obj (.text)
+                  00339e0f    00000012     rts2800_fpu32.lib : args_main.c.obj (.text)
+                  00339e21    00000010                       : memccpy.c.obj (.text)
+                  00339e31    0000000e                       : fd_sub28.asm.obj (.text)
+                  00339e3f    0000000c                       : strchr.c.obj (.text)
+                  00339e4b    00000009                       : _lock.c.obj (.text)
+                  00339e54    00000009                       : fd_neg28.asm.obj (.text)
+                  00339e5d    00000009                       : wcslen.c.obj (.text)
+                  00339e66    00000008     DSP2833x_CodeStartBranch.obj (.text)
+                  00339e6e    00000008     rts2800_fpu32.lib : strlen.c.obj (.text)
+                  00339e76    00000007                       : memset.c.obj (.text)
+                  00339e7d    00000005                       : strcpy.c.obj (.text)
+                  00339e82    00000002                       : pre_init.c.obj (.text)
+                  00339e84    00000001                       : startup.c.obj (.text)
 
 codestart 
 *          0    0033fff6    00000002     
@@ -247,18 +247,18 @@ ECanbMOTORegsFile
 .stack     1    0000d000    00000300     UNINITIALIZED
                   0000d000    00000300     --HOLE--
 
-.econst    0    00339e66    000002c6     
-                  00339e66    00000101     rts2800_fpu32.lib : ctype.c.obj (.econst:.string:__ctypes_)
-                  00339f67    00000001     --HOLE-- [fill = 0]
-                  00339f68    00000100     DSP2833x_PieVect.obj (.econst:_PieVectTableInit)
-                  0033a068    0000002d     main.obj (.econst:.string)
-                  0033a095    00000001     --HOLE-- [fill = 0]
-                  0033a096    00000028     ecan.obj (.econst:.string)
-                  0033a0be    00000026     rts2800_fpu32.lib : _printfi.c.obj (.econst:.string)
-                  0033a0e4    0000001c                       : _printfi.c.obj (.econst)
-                  0033a100    0000001c                       : s_scalbn.c.obj (.econst)
-                  0033a11c    00000008     main.obj (.econst:.string:_$P$T0$1)
-                  0033a124    00000008     rts2800_fpu32.lib : s_frexp.c.obj (.econst)
+.econst    0    00339e86    000002aa     
+                  00339e86    00000101     rts2800_fpu32.lib : ctype.c.obj (.econst:.string:__ctypes_)
+                  00339f87    00000001     --HOLE-- [fill = 0]
+                  00339f88    00000100     DSP2833x_PieVect.obj (.econst:_PieVectTableInit)
+                  0033a088    00000026     rts2800_fpu32.lib : _printfi.c.obj (.econst:.string)
+                  0033a0ae    00000020     ecan.obj (.econst:.string)
+                  0033a0ce    0000001c     rts2800_fpu32.lib : _printfi.c.obj (.econst)
+                  0033a0ea    0000001c                       : s_scalbn.c.obj (.econst)
+                  0033a106    00000019     main.obj (.econst:.string)
+                  0033a11f    00000008     main.obj (.econst:.string:_$P$T0$1)
+                  0033a127    00000001     --HOLE-- [fill = 0]
+                  0033a128    00000008     rts2800_fpu32.lib : s_frexp.c.obj (.econst)
 
 .reset     0    003fffc0    00000002     DSECT
                   003fffc0    00000002     rts2800_fpu32.lib : boot28.asm.obj (.reset)
@@ -425,8 +425,8 @@ MODULE SUMMARY
        DSP2833x_DefaultIsr.obj           790    0                  0                 
        DSP2833x_ECan.obj                 306    0                  0                 
        DSP2833x_PieVect.obj              32     256                0                 
+       main.obj                          218    33                 0                 
        DSP2833x_SysCtrl.obj              247    0                  0                 
-       main.obj                          149    53                 0                 
        DSP2833x_Sci.obj                  72     0                  0                 
        DSP2833x_PieCtrl.obj              40     0                  0                 
        DSP2833x_CpuTimers.obj            0      0                  24                
@@ -436,14 +436,14 @@ MODULE SUMMARY
        DSP2833x_usDelay.obj              8      0                  0                 
        DSP2833x_ADC_cal.obj              7      0                  0                 
     +--+---------------------------------+------+------------------+--------------------+
-       Total:                            1703   309                2703              
+       Total:                            1772   289                2703              
                                                                                      
     .\Module\Src\
-       ecan.obj                          512    52                 70                
+       ecan.obj                          475    44                 70                
        sci.obj                           318    4                  257               
        gpio.obj                          278    0                  0                 
     +--+---------------------------------+------+------------------+--------------------+
-       Total:                            1108   56                 327               
+       Total:                            1071   48                 327               
                                                                                      
     C:\ti\ccs1250\ccs\tools\compiler\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32.lib
        _printfi.c.obj                    3269   66                 0                 
@@ -489,7 +489,7 @@ MODULE SUMMARY
                                                                                      
        Stack:                            0      0                  768               
     +--+---------------------------------+------+------------------+--------------------+
-       Grand Total:                      7798   752                3809              
+       Grand Total:                      7830   724                3809              
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -597,9 +597,9 @@ address     data page           name
 
 0000d000     340 (0000d000)     __stack
 
-00339e66    ce79 (00339e40)     __ctypes_
+00339e86    ce7a (00339e80)     __ctypes_
 
-00339f68    ce7d (00339f40)     _PieVectTableInit
+00339f88    ce7e (00339f80)     _PieVectTableInit
 
 0033fff8    cfff (0033ffc0)     _CsmPwl
 
@@ -611,29 +611,29 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                            
 ----  -------   ----                            
 0     00338000  .text                           
-0     00339c24  C$$EXIT                         
-0     0033975c  FD$$ADD                         
-0     00339bd0  FD$$CMP                         
-0     0033988d  FD$$DIV                         
-0     00339918  FD$$MPY                         
-0     00339e34  FD$$NEG                         
-0     00339e11  FD$$SUB                         
-0     00339cbd  FD$$TOI                         
-0     00339cfe  FD$$TOL                         
-0     00339d75  FS$$TOFD                        
-0     00339d3b  I$$TOFD                         
-0     00339bfa  L$$DIV                          
-0     00339c09  L$$MOD                          
-0     00339d91  L$$TOFD                         
-0     00339dad  LL$$AND                         
-0     00339d1d  LL$$CMP                         
+0     00339c44  C$$EXIT                         
+0     00339836  FD$$ADD                         
+0     00339bf0  FD$$CMP                         
+0     003398d2  FD$$DIV                         
+0     0033995d  FD$$MPY                         
+0     00339e54  FD$$NEG                         
+0     00339e31  FD$$SUB                         
+0     00339cdd  FD$$TOI                         
+0     00339d1e  FD$$TOL                         
+0     00339d95  FS$$TOFD                        
+0     00339d5b  I$$TOFD                         
+0     00339c1a  L$$DIV                          
+0     00339c29  L$$MOD                          
+0     00339db1  L$$TOFD                         
+0     00339dcd  LL$$AND                         
+0     00339d3d  LL$$CMP                         
 0     003394b5  LL$$DIV                         
 0     003394f1  LL$$MOD                         
-0     00339db5  LL$$OR                          
-0     00339dbd  LL$$XOR                         
-0     00339c17  UL$$DIV                         
-0     00339c1e  UL$$MOD                         
-0     00339d2f  ULL$$CMP                        
+0     00339dd5  LL$$OR                          
+0     00339ddd  LL$$XOR                         
+0     00339c37  UL$$DIV                         
+0     00339c3e  UL$$MOD                         
+0     00339d4f  ULL$$CMP                        
 0     0033952b  ULL$$DIV                        
 0     0033955a  ULL$$MOD                        
 0     00338dab  _ADCINT_ISR                     
@@ -715,7 +715,7 @@ page  address   name
 0     00338e87  _EQEP2_INT_ISR                  
 1     00006b00  _EQep1Regs                      
 1     00006b40  _EQep2Regs                      
-0     00339c6c  _EnableInterrupts               
+0     00339c8c  _EnableInterrupts               
 1     00000a80  _FlashRegs                      
 0     00339291  _GPIO_SetConfig                 
 0     003392a8  _GPIO_WritePin                  
@@ -734,16 +734,16 @@ page  address   name
 0     00339267  _InitECanaGpio                  
 0     003391e3  _InitECanb                      
 0     0033927d  _InitECanbGpio                  
-0     00339dc5  _InitGpio                       
+0     00339de5  _InitGpio                       
 0     00339627  _InitPeripheralClocks           
-0     00339c4d  _InitPieCtrl                    
-0     00339cde  _InitPieVectTable               
+0     00339c6d  _InitPieCtrl                    
+0     00339cfe  _InitPieVectTable               
 0     003395d7  _InitPll                        
-0     00339ac7  _InitSci                        
-0     00339ac8  _InitSciGpio                    
-0     00339acf  _InitSciaGpio                   
-0     00339ae5  _InitScibGpio                   
-0     00339af9  _InitScicGpio                   
+0     00339ae7  _InitSci                        
+0     00339ae8  _InitSciGpio                    
+0     00339aef  _InitSciaGpio                   
+0     00339b05  _InitScibGpio                   
+0     00339b19  _InitScicGpio                   
 0     003395bc  _InitSysCtrl                    
 0     00338fbd  _LUF_ISR                        
 0     00338fb3  _LVF_ISR                        
@@ -753,13 +753,13 @@ page  address   name
 0     00338eaf  _MXINTB_ISR                     
 1     00005000  _McbspaRegs                     
 1     00005040  _McbspbRegs                     
-0     00339ddc  _MemCopy                        
+0     00339dfc  _MemCopy                        
 0     00338cf7  _NMI_ISR                        
 0     00338fc7  _PIE_RESERVED                   
 1     00380090  _PartIdRegs                     
 1     00000ce0  _PieCtrlRegs                    
 1     00000d00  _PieVectTable                   
-0     00339f68  _PieVectTableInit               
+0     00339f88  _PieVectTableInit               
 0     00338ce3  _RTOSINT_ISR                    
 0     00320004  _RamfuncsLoadEnd                
 abs   00000004  _RamfuncsLoadSize               
@@ -825,53 +825,53 @@ abs   00000300  __STACK_SIZE
 1     0000c162  ___TI_cleanup_ptr               
 1     0000c164  ___TI_dtors_ptr                 
 1     0000c160  ___TI_enable_exit_profile_output
-0     00339b70  ___TI_ltoa                      
+0     00339b90  ___TI_ltoa                      
 abs   ffffffff  ___TI_pprof_out_hndl            
 0     00338b40  ___TI_printfi                   
 abs   ffffffff  ___TI_prof_data_size            
 abs   ffffffff  ___TI_prof_data_start           
 abs   ffffffff  ___binit__                      
 abs   ffffffff  ___c_args__                     
-0     0033a12c  ___cinit__                      
-0     00339e65  ___etext__                      
+0     0033a130  ___cinit__                      
+0     00339e85  ___etext__                      
 abs   ffffffff  ___pinit__                      
 0     00338000  ___text__                       
-0     00339def  __args_main                     
-0     00339e66  __ctypes_                       
+0     00339e0f  __args_main                     
+0     00339e86  __ctypes_                       
 1     0000c13e  __lock                          
-0     00339e33  __nop                           
-0     00339e2f  __register_lock                 
-0     00339e2b  __register_unlock               
+0     00339e53  __nop                           
+0     00339e4f  __register_lock                 
+0     00339e4b  __register_unlock               
 1     0000d000  __stack                         
-0     00339e64  __system_post_cinit             
-0     00339e62  __system_pre_init               
+0     00339e84  __system_post_cinit             
+0     00339e82  __system_pre_init               
 1     0000c166  __unlock                        
-0     00339c24  _abort                          
-0     00339b0f  _atoi                           
-0     00339a71  _c_int00                        
-0     00339c75  _copy_in                        
-0     00339c99  _copysignl                      
+0     00339c44  _abort                          
+0     00339b2f  _atoi                           
+0     00339a91  _c_int00                        
+0     00339c95  _copy_in                        
+0     00339cb9  _copysignl                      
 1     0000c168  _errno                          
-0     00339c26  _exit                           
-0     00339a17  _frexpl                         
+0     00339c46  _exit                           
+0     003399e0  _frexpl                         
 1     0000c100  _gCanErrorCount                 
 1     0000c101  _isrFlag                        
-0     003396b3  _ldexpl                         
-0     003397f8  _main                           
-0     00339e01  _memccpy                        
-0     00339d58  _memcpy                         
-0     00339e56  _memset                         
+0     0033978d  _ldexpl                         
+0     003396b3  _main                           
+0     00339e21  _memccpy                        
+0     00339d78  _memcpy                         
+0     00339e76  _memset                         
 0     00338fd1  _rsvd_ISR                       
-0     003396b3  _scalbnl                        
-0     00339e1f  _strchr                         
-0     00339e5d  _strcpy                         
-0     00339e4e  _strlen                         
-0     00339ba0  _vsprintf                       
-0     00339e3d  _wcslen                         
+0     0033978d  _scalbnl                        
+0     00339e3f  _strchr                         
+0     00339e7d  _strcpy                         
+0     00339e6e  _strlen                         
+0     00339bc0  _vsprintf                       
+0     00339e5d  _wcslen                         
 abs   ffffffff  binit                           
-0     0033a12c  cinit                           
+0     0033a130  cinit                           
 0     0033fff6  code_start                      
-0     00339e65  etext                           
+0     00339e85  etext                           
 abs   ffffffff  pinit                           
 
 
@@ -1005,68 +1005,68 @@ page  address   name
 0     003395d7  _InitPll                        
 0     00339627  _InitPeripheralClocks           
 0     00339682  _CsmUnlock                      
-0     003396b3  _ldexpl                         
-0     003396b3  _scalbnl                        
-0     0033975c  FD$$ADD                         
-0     003397f8  _main                           
-0     0033988d  FD$$DIV                         
-0     00339918  FD$$MPY                         
-0     00339a17  _frexpl                         
-0     00339a71  _c_int00                        
-0     00339ac7  _InitSci                        
-0     00339ac8  _InitSciGpio                    
-0     00339acf  _InitSciaGpio                   
-0     00339ae5  _InitScibGpio                   
-0     00339af9  _InitScicGpio                   
-0     00339b0f  _atoi                           
-0     00339b70  ___TI_ltoa                      
-0     00339ba0  _vsprintf                       
-0     00339bd0  FD$$CMP                         
-0     00339bfa  L$$DIV                          
-0     00339c09  L$$MOD                          
-0     00339c17  UL$$DIV                         
-0     00339c1e  UL$$MOD                         
-0     00339c24  C$$EXIT                         
-0     00339c24  _abort                          
-0     00339c26  _exit                           
-0     00339c4d  _InitPieCtrl                    
-0     00339c6c  _EnableInterrupts               
-0     00339c75  _copy_in                        
-0     00339c99  _copysignl                      
-0     00339cbd  FD$$TOI                         
-0     00339cde  _InitPieVectTable               
-0     00339cfe  FD$$TOL                         
-0     00339d1d  LL$$CMP                         
-0     00339d2f  ULL$$CMP                        
-0     00339d3b  I$$TOFD                         
-0     00339d58  _memcpy                         
-0     00339d75  FS$$TOFD                        
-0     00339d91  L$$TOFD                         
-0     00339dad  LL$$AND                         
-0     00339db5  LL$$OR                          
-0     00339dbd  LL$$XOR                         
-0     00339dc5  _InitGpio                       
-0     00339ddc  _MemCopy                        
-0     00339def  __args_main                     
-0     00339e01  _memccpy                        
-0     00339e11  FD$$SUB                         
-0     00339e1f  _strchr                         
-0     00339e2b  __register_unlock               
-0     00339e2f  __register_lock                 
-0     00339e33  __nop                           
-0     00339e34  FD$$NEG                         
-0     00339e3d  _wcslen                         
-0     00339e4e  _strlen                         
-0     00339e56  _memset                         
-0     00339e5d  _strcpy                         
-0     00339e62  __system_pre_init               
-0     00339e64  __system_post_cinit             
-0     00339e65  ___etext__                      
-0     00339e65  etext                           
-0     00339e66  __ctypes_                       
-0     00339f68  _PieVectTableInit               
-0     0033a12c  ___cinit__                      
-0     0033a12c  cinit                           
+0     003396b3  _main                           
+0     0033978d  _ldexpl                         
+0     0033978d  _scalbnl                        
+0     00339836  FD$$ADD                         
+0     003398d2  FD$$DIV                         
+0     0033995d  FD$$MPY                         
+0     003399e0  _frexpl                         
+0     00339a91  _c_int00                        
+0     00339ae7  _InitSci                        
+0     00339ae8  _InitSciGpio                    
+0     00339aef  _InitSciaGpio                   
+0     00339b05  _InitScibGpio                   
+0     00339b19  _InitScicGpio                   
+0     00339b2f  _atoi                           
+0     00339b90  ___TI_ltoa                      
+0     00339bc0  _vsprintf                       
+0     00339bf0  FD$$CMP                         
+0     00339c1a  L$$DIV                          
+0     00339c29  L$$MOD                          
+0     00339c37  UL$$DIV                         
+0     00339c3e  UL$$MOD                         
+0     00339c44  C$$EXIT                         
+0     00339c44  _abort                          
+0     00339c46  _exit                           
+0     00339c6d  _InitPieCtrl                    
+0     00339c8c  _EnableInterrupts               
+0     00339c95  _copy_in                        
+0     00339cb9  _copysignl                      
+0     00339cdd  FD$$TOI                         
+0     00339cfe  _InitPieVectTable               
+0     00339d1e  FD$$TOL                         
+0     00339d3d  LL$$CMP                         
+0     00339d4f  ULL$$CMP                        
+0     00339d5b  I$$TOFD                         
+0     00339d78  _memcpy                         
+0     00339d95  FS$$TOFD                        
+0     00339db1  L$$TOFD                         
+0     00339dcd  LL$$AND                         
+0     00339dd5  LL$$OR                          
+0     00339ddd  LL$$XOR                         
+0     00339de5  _InitGpio                       
+0     00339dfc  _MemCopy                        
+0     00339e0f  __args_main                     
+0     00339e21  _memccpy                        
+0     00339e31  FD$$SUB                         
+0     00339e3f  _strchr                         
+0     00339e4b  __register_unlock               
+0     00339e4f  __register_lock                 
+0     00339e53  __nop                           
+0     00339e54  FD$$NEG                         
+0     00339e5d  _wcslen                         
+0     00339e6e  _strlen                         
+0     00339e76  _memset                         
+0     00339e7d  _strcpy                         
+0     00339e82  __system_pre_init               
+0     00339e84  __system_post_cinit             
+0     00339e85  ___etext__                      
+0     00339e85  etext                           
+0     00339e86  __ctypes_                       
+0     00339f88  _PieVectTableInit               
+0     0033a130  ___cinit__                      
+0     0033a130  cinit                           
 0     0033fff6  code_start                      
 0     00380080  _ADC_cal                        
 1     00000880  _DevEmuRegs                     

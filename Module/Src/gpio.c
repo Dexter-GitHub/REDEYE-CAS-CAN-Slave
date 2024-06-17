@@ -10,11 +10,11 @@ void GPIO_SetConfig(void)
 {
     EALLOW;
     GpioCtrlRegs.GPADIR.bit.GPIO0 = CONFIG_GPIO_OUTPUT;      
-    GpioCtrlRegs.GPADIR.bit.GPIO1 = CONFIG_GPIO_OUTPUT;      /* TEST START SW2 INPUT */
-    GpioCtrlRegs.GPADIR.bit.GPIO2 = CONFIG_GPIO_OUTPUT;      /* TEST STS1 INPUT */
-    GpioCtrlRegs.GPADIR.bit.GPIO3 = CONFIG_GPIO_OUTPUT;      /* TEST STS2 INPUT */
-    GpioCtrlRegs.GPADIR.bit.GPIO4 = CONFIG_GPIO_OUTPUT;     /* PASS LAMP 점등 */
-    GpioCtrlRegs.GPADIR.bit.GPIO5 = CONFIG_GPIO_OUTPUT;     /* FAIL LAMP 점등 */ 
+    GpioCtrlRegs.GPADIR.bit.GPIO1 = CONFIG_GPIO_OUTPUT;      
+    GpioCtrlRegs.GPADIR.bit.GPIO2 = CONFIG_GPIO_OUTPUT;      
+    GpioCtrlRegs.GPADIR.bit.GPIO3 = CONFIG_GPIO_OUTPUT;      
+    GpioCtrlRegs.GPADIR.bit.GPIO4 = CONFIG_GPIO_OUTPUT;     
+    GpioCtrlRegs.GPADIR.bit.GPIO5 = CONFIG_GPIO_OUTPUT;     
 
     GpioDataRegs.GPACLEAR.all = 0xFFFFFFFFU;    
     EDIS;

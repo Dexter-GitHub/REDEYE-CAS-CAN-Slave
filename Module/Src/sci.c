@@ -199,6 +199,3 @@ static interrupt void SCIA_RxFifoIsr(void)
     
     gRxIsr = true;    
 }
-
-
-

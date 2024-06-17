@@ -14,7 +14,8 @@ void main(void)
 {
     Uint8 txBuff[MAX_DATA_LEN] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
     Uint8 rxBuff[MAX_DATA_LEN] = {0,};
-    Uint16 i = 0;
+    Uint16 i = 0, j = 7;
+    bool status = true;
 
     InitSysCtrl();
     InitGpio();
@@ -41,8 +42,6 @@ void main(void)
     EINT;
     ERTM;
 
-    ECAN_SetSelfTestMode(ECAN_SELF_TEST_MODE_ENABLE);
-
     GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_RESET);
     GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_1_VAL, GPIO_PIN_RESET);
     GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_2_VAL, GPIO_PIN_RESET);
@@ -53,12 +52,30 @@ void main(void)
     
     ECAN_Write(txBuff, 1000);
     FOREVER {
-        if (true == ECAN_GetIsr()) {
-            SCIA_Print("ECAN Inturrupt !!\r\n");
+        if (true == ECAN_GetIsr()) {            
             ECAN_Read(1, rxBuff);
+            GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_5_VAL, GPIO_PIN_SET);
+            DELAY_US(1000000);
+            GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_5_VAL, GPIO_PIN_RESET);
             for (i = 0; i < MAX_DATA_LEN; i++) {
                 SCIA_Print("%d. 0x%x\r\n", i, rxBuff[i]);
+                if (txBuff[i] != rxBuff[j]) {
+                    status = false;
+                }
+                j--;
             }
+
+            if (status == true) {
+                GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_SET);
+                DELAY_US(1000000);
+                GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_REfiSET);
+                ECAN_Write(txBuff, 1000);
+            }
+            else {
+                GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_RESET);
+                status = true;
+            }
+            j = 7;
         }
         DELAY_US(1000000);
     }

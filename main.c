@@ -68,7 +68,7 @@ void main(void)
             if (status == true) {
                 GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_SET);
                 DELAY_US(1000000);
-                GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_REfiSET);
+                GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_0_VAL, GPIO_PIN_RESET);
                 ECAN_Write(txBuff, 1000);
             }
             else {
